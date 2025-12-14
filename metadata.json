@@ -1,0 +1,5 @@
+{
+  "name": "OmniShell",
+  "description": "A high-fidelity AI-powered command line interface simulator. Features package management simulation, system commands, and a generative AI backend for unlimited command handling.",
+  "requestFramePermissions": []
+}

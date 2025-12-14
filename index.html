@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OmniShell AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        /* Default Monochrome / Black & White Theme */
+        --color-bg: #000000;
+        --color-text: #cccccc;
+        --color-accent: #ffffff;
+        --color-dim: #666666;
+        --color-error: #ffffff;
+        --color-warn: #eeeeee;
+        --color-highlight: #ffffff;
+        --color-border: #333333;
+        
+        /* Dynamic Environment Vars */
+        --font-main: 'Fira Code', monospace;
+      }
+
+      body {
+        background-color: var(--color-bg);
+        color: var(--color-text);
+        font-family: var(--font-main);
+        overflow: hidden; /* App handles scrolling */
+        transition: background-color 0.5s ease, color 0.5s ease;
+      }
+      
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--color-bg); 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--color-dim); 
+        border-radius: 0px;
+        border: 1px solid var(--color-bg);
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--color-text); 
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              mono: ['var(--font-main)', 'monospace'],
+            },
+            colors: {
+              terminal: {
+                bg: 'var(--color-bg)',
+                text: 'var(--color-text)',
+                accent: 'var(--color-accent)',
+                dim: 'var(--color-dim)',
+                error: 'var(--color-error)',
+                warn: 'var(--color-warn)',
+                highlight: 'var(--color-highlight)',
+                border: 'var(--color-border)'
+              }
+            },
+            animation: {
+              'blink': 'blink 1s step-end infinite',
+              'glitch': 'glitch 1s linear infinite',
+            },
+            keyframes: {
+              blink: {
+                '0%, 100%': { opacity: '1' },
+                '50%': { opacity: '0' },
+              }
+            }
+          },
+        },
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.33.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
